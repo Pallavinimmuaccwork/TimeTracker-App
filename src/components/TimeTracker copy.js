@@ -51,7 +51,7 @@ export default function TimeTracker() {
     const handleTaskNameChange = (event) => {
         setTaskName(event.target.value);
     };
-
+console.log("test");
     const handleStartTimer = () => {
         setTimerRunning(true);
         setStartTime(Date.now() - elapsedTime);

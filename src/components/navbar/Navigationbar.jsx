@@ -1,0 +1,24 @@
+import { AppBar, Toolbar, Typography } from "@mui/material";
+import AccessTimeFilledIcon from "@mui/icons-material/AccessTimeFilled";
+import React from "react";
+
+const Navigationbar = ({ totalTaskTime }) => {
+
+    console.log('totalTaskTime', totalTaskTime)
+
+    return (
+        <AppBar position="static" sx={{ backgroundColor: 'white', color: 'black', height: '70px' }}>
+            <Toolbar>
+                <AccessTimeFilledIcon sx={{ fontSize: 40, marginLeft: '90px' }} />
+                <Typography variant="h5" component="div" sx={{ flexGrow: 1, marginRight: "1000px" }}>
+                    Time Tracker
+                </Typography>
+                <Typography variant="h5" component="div" sx={{ flexGrow: 1, marginRight: "50px" }}>
+                    Total Time Spent: {totalTaskTime}
+                </Typography>
+            </Toolbar>
+        </AppBar>
+    );
+};
+
+export default Navigationbar;

@@ -5,7 +5,7 @@ export function formatTime(ms) {
     return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
 }
 
-export const calculateTotalTaskTime = (startDateTime, lastendDateTime) => {
+export const calculateTotalTaskTime = (startDateTime, lastendDateTime,totalTime) => {
     const startTime = new Date(startDateTime);
     const endTime = new Date(lastendDateTime);
     const timeDifference = endTime - startTime;

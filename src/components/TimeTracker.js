@@ -4,6 +4,7 @@ import { Backdrop, Card, CardContent, TextField, Typography } from '@mui/materia
 import { Button } from 'react-bootstrap';
 import TaskCard from './taskcart/TaskCard';
 import { calculateTotalAllTaskTime } from '../helper/functions';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 
 const TimeTracker = ({ setTotalTaskTime }) => {
     const [tasklist, setTasklist] = useState([]);
@@ -49,7 +50,8 @@ const TimeTracker = ({ setTotalTaskTime }) => {
                 <TaskCard key={task.id} data={task} setTasklist={setTasklist} handleClearTask={handleClearTask} />
             ))}
 
-            <Button onClick={addTask}>ADD</Button>
+           
+            <AddCircleIcon sx={{ fontSize: 40, marginLeft: '100px', marginTop: "50px", color: "blue" }} onClick={addTask} />
 
             {showAddTask && (
                 <Backdrop open={true} sx={{ zIndex: 2, color: '#fff', backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
@@ -57,7 +59,11 @@ const TimeTracker = ({ setTotalTaskTime }) => {
                         <CardContent sx={{ display: 'flex', flexDirection: 'column', textAlign: 'left', padding: "40px" }}>
                             <Typography variant="h5" component="div" sx={{ mb: 2 }}>Enter Task Name</Typography>
                             <TextField label="Task Name" variant="outlined" sx={{ mb: 2 }} value={taskName} onChange={handleTaskNameChange} />
-                            <Button variant="contained" color="primary" sx={{ width: '100px' }} onClick={handleSaveTask}>Save</Button>
+                           <Button variant="contained" size="small" style={{ fontSize: '12px', backgroundColor: '#5056ED',width:'80px'}} onClick={handleSaveTask}>Save</Button>
+
+
+
+
                         </CardContent>
                     </Card>
                 </Backdrop>

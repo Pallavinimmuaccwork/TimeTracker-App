@@ -42,13 +42,13 @@ const TaskCard = ({ data, handleClearTask, setTasklist }) => {
         if (endTime > startTime) {
 
 
-            const totalTaskTime = calculateTotalTaskTime(startDateTime, endTime.toLocaleString());
-            console.log(totalTaskTime); // Output: "00:00:12"
+           const totalTaskTime = calculateTotalTaskTime(startDateTime, endTime);
+           
             setTasklist(prevTasks => prevTasks.map(task => {
                 return task.id === id ? { ...task, lastendDateTime: endTime.toLocaleString(), totalTaskTime: totalTaskTime } : task;
             }));
         }
-        const duration = endTime - startTime;
+                const duration = endTime - startTime;
         const formattedDuration = formatTime(duration);
         data.history.push(`Started the timer at: ${startTime.toLocaleString()} & Stopped at: ${endTime.toLocaleString()} (Duration: ${formattedDuration})`);
     };
@@ -57,13 +57,13 @@ const TaskCard = ({ data, handleClearTask, setTasklist }) => {
         <div>
             <Card sx={{ width: "1200px", marginLeft: "280px", marginTop: '30px', borderRadius: '25px', position: 'relative', zIndex: 1 }}>
                 <CardContent sx={{ display: 'flex', alignItems: 'center' }}>
-                    <Typography sx={{ fontSize: 35, marginRight: 'auto' }} color="text.secondary" gutterBottom>
+                    <Typography sx={{ fontSize: 35, marginRight: 'auto',marginBottom:"100px",marginLeft:'40px' }} color="text.secondary" gutterBottom>
                         {taskName}
                     </Typography>
                     <Typography sx={{ fontSize: 25, marginRight: 'auto', marginTop: '80px' }} variant="h5" component="div">
                         History:
                     </Typography>
-                    <Typography sx={{ fontSize: 15, marginRight: 'auto', marginTop: '100px' }} variant="body1" component="div">
+                    <Typography sx={{ fontSize: 15, marginRight: '400px', marginTop: '100px' }} variant="body1" component="div">
                         {history.length === 0 && 'No History Found, Click on the start button to track the timer'}
                         {history.map((entry, index) => (
                             <div key={index}>{entry}</div>

@@ -10,10 +10,10 @@ const Navigationbar = ({ totalTaskTime }) => {
         <AppBar position="static" sx={{ backgroundColor: 'white', color: 'black', height: '70px' }}>
             <Toolbar>
                 <AccessTimeFilledIcon sx={{ fontSize: 40, marginLeft: '90px' }} />
-                <Typography variant="h5" component="div" sx={{ flexGrow: 1, marginRight: "1000px" }}>
+                <Typography component="div" sx={{ flexGrow: 1, marginRight: "1000px",fontSize:'20px' }}>
                     Time Tracker
                 </Typography>
-                <Typography variant="h5" component="div" sx={{ flexGrow: 1, marginRight: "50px" }}>
+                <Typography component="div" sx={{ flexGrow: 1, marginRight: "50px",fontSize:'20px' }}>
                     Total Time Spent: {totalTaskTime}
                 </Typography>
             </Toolbar>

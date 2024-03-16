@@ -57,21 +57,19 @@ const TaskCard = ({ data, handleClearTask, setTasklist }) => {
         <div>
             <Card sx={{ width: "1200px", marginLeft: "280px", marginTop: '30px', borderRadius: '25px', position: 'relative', zIndex: 1 }}>
                 <CardContent sx={{ display: 'flex', alignItems: 'center' }}>
-                    <Typography sx={{ fontSize: 35, marginRight: 'auto',marginBottom:"100px",marginLeft:'40px' }} color="text.secondary" gutterBottom>
+                    <Typography sx={{ fontSize: 20, marginRight: 'auto',marginBottom:"100px",marginLeft:'40px' }} color="text.secondary" gutterBottom>
                         {taskName}
                     </Typography>
-                    <Typography sx={{ fontSize: 25, marginRight: 'auto', marginTop: '80px' }} variant="h5" component="div">
+                    <Typography sx={{ fontSize: 20, marginRight: 'auto', marginTop: '80px' }}  component="div">
                         History:
                     </Typography>
-                    <Typography sx={{ fontSize: 15, marginRight: '400px', marginTop: '100px' }} variant="body1" component="div">
+                    <Typography sx={{ fontSize: 16, marginRight: '400px', marginTop: '100px' }} variant="body1" component="div">
                         {history.length === 0 && 'No History Found, Click on the start button to track the timer'}
                         {history.map((entry, index) => (
                             <div key={index}>{entry}</div>
                         ))}
                     </Typography>
-                    <Typography sx={{ fontSize: 35, marginRight: '100px', color: 'grey' }} color="text.secondary" gutterBottom>
-                        |
-                    </Typography>
+                  
                     <Box sx={{ display: 'flex', alignItems: 'center', ml: 2, mb: 1 }}>
                         <Typography sx={{ fontSize: 25, marginTop: '10px' }} color="text.secondary" gutterBottom>
                             {formatTime(elapsedTime)}

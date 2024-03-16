@@ -49,9 +49,9 @@ const TimeTracker = ({ setTotalTaskTime }) => {
             {tasklist.map(task => (
                 <TaskCard key={task.id} data={task} setTasklist={setTasklist} handleClearTask={handleClearTask} />
             ))}
-
+ <Typography variant="h3" component="div" sx={{ mb: 2, marginTop: "250px" }}>Click here to add Tasks</Typography>
            
-            <AddCircleIcon sx={{ fontSize: 40, marginLeft: '100px', marginTop: "50px", color: "blue" }} onClick={addTask} />
+           <AddCircleIcon sx={{ fontSize: 40, marginLeft: '20px',  color: "blue" }} onClick={addTask} />
 
             {showAddTask && (
                 <Backdrop open={true} sx={{ zIndex: 2, color: '#fff', backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
